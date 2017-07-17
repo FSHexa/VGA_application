@@ -1,0 +1,147 @@
+NET "CLK"           LOC = P22;
+#NET "RESET"         LOC = P27;
+
+#NET "BUT(0)"        LOC = P21;
+#NET "BUT(1)"        LOC = P23;
+#NET "BUT(2)"        LOC = P24;
+#NET "BUT(3)"        LOC = P26;
+
+#NET "BEEP"          LOC = P141;
+#
+#NET "LED(0)"        LOC = P29;
+#NET "LED(1)"        LOC = P30;
+#NET "LED(2)"        LOC = P32;
+#NET "LED(3)"        LOC = P33;
+#
+##ИК приемник
+#NET "IR"            LOC = P34;
+#
+##UART
+#NET "UART_RX"       LOC = P104;
+#NET "UART_TX"       LOC = P105;
+#
+##I2C
+#NET "I2C_SCL"       LOC = P112;
+#NET "I2C_SDA"       LOC = P111;
+#
+##SD Card
+#NET "SD_DIN"        LOC = P102;
+#NET "SD_NCS"        LOC = P101;
+#NET "SD_DOUT"       LOC = P100;
+#NET "SD_CLK"        LOC = P99;
+
+#VGA
+NET "VGA_VSYNC"     LOC = P75 | IOSTANDARD = "LVCMOS33";
+NET "VGA_HSYNC"     LOC = P74 | IOSTANDARD = "LVCMOS33";
+NET "VGA_RED(0)"    LOC = P93 | IOSTANDARD = "LVCMOS33";
+NET "VGA_RED(1)"    LOC = P94 | IOSTANDARD = "LVCMOS33";
+NET "VGA_RED(2)"    LOC = P95 | IOSTANDARD = "LVCMOS33";
+NET "VGA_RED(3)"    LOC = P97 | IOSTANDARD = "LVCMOS33";
+NET "VGA_RED(4)"    LOC = P98 | IOSTANDARD = "LVCMOS33";
+NET "VGA_GREEN(0)"  LOC = P83 | IOSTANDARD = "LVCMOS33";
+NET "VGA_GREEN(1)"  LOC = P84 | IOSTANDARD = "LVCMOS33";
+NET "VGA_GREEN(2)"  LOC = P85 | IOSTANDARD = "LVCMOS33";
+NET "VGA_GREEN(3)"  LOC = P87 | IOSTANDARD = "LVCMOS33";
+NET "VGA_GREEN(4)"  LOC = P88 | IOSTANDARD = "LVCMOS33";
+NET "VGA_GREEN(5)"  LOC = P92 | IOSTANDARD = "LVCMOS33";
+NET "VGA_BLUE(0)"   LOC = P78 | IOSTANDARD = "LVCMOS33";
+NET "VGA_BLUE(1)"   LOC = P79 | IOSTANDARD = "LVCMOS33";
+NET "VGA_BLUE(2)"   LOC = P80 | IOSTANDARD = "LVCMOS33";
+NET "VGA_BLUE(3)"   LOC = P81 | IOSTANDARD = "LVCMOS33";
+NET "VGA_BLUE(4)"   LOC = P82 | IOSTANDARD = "LVCMOS33";
+
+##OV7670
+#NET "CMOS_XCLK"     LOC = P15;
+#NET "CMOS_PCLK"     LOC = P14;
+#NET "CMOS_HREF"     LOC = P2;
+#NET "CMOS_VSYNC"    LOC = P1;
+#
+#NET "CMOS_DB(0)"    LOC = P12;
+#NET "CMOS_DB(1)"    LOC = P11;
+#NET "CMOS_DB(2)"    LOC = P10;
+#NET "CMOS_DB(3)"    LOC = P9;
+#NET "CMOS_DB(4)"    LOC = P8;
+#NET "CMOS_DB(5)"    LOC = P7;
+#NET "CMOS_DB(6)"    LOC = P6;
+#NET "CMOS_DB(7)"    LOC = P5;
+#
+#NET "CMOS_SCLK"     LOC = P142;
+#NET "CMOS_SDAT"     LOC = P143;
+#
+##OV5640
+#NET "cmos_rst_n"    LOC = P16;
+#NET "cmos_pwdn"     LOC = P17;
+
+#Digital LED
+#    ----- 
+#   |  0  |
+# ---     --- 
+#|   |   |   |
+#| 5 |   | 1 |
+#|   |---|   |
+# ---  6  ---
+#|   |---|   |
+#| 4 |   | 2 |
+#|   |   |   |
+# ---     ---    ---
+#   |  3  |     | 7 |
+#    -----       ---
+#NET "DIG(0)"        LOC = P101;
+#NET "DIG(1)"        LOC = P102;
+#NET "DIG(2)"        LOC = P99;
+#NET "DIG(3)"        LOC = P100;
+#NET "DIG(4)"        LOC = P84;
+#NET "DIG(5)"        LOC = P85;
+#NET "DIG(6)"        LOC = P82;
+#NET "DIG(7)"        LOC = P83;
+#NET "SEG(0)"        LOC = P97;
+#NET "SEG(1)"        LOC = P98;
+#NET "SEG(2)"        LOC = P94;
+#NET "SEG(3)"        LOC = P95;
+#NET "SEG(4)"        LOC = P92;
+#NET "SEG(5)"        LOC = P93;
+#NET "SEG(6)"        LOC = P87;
+#NET "SEG(7)"        LOC = P88;
+
+##SDRAM
+#NET "SDRAM_D(0)"    LOC = P114;
+#NET "SDRAM_D(1)"    LOC = P115;
+#NET "SDRAM_D(2)"    LOC = P117;
+#NET "SDRAM_D(3)"    LOC = P116;
+#NET "SDRAM_D(4)"    LOC = P119;
+#NET "SDRAM_D(5)"    LOC = P118;
+#NET "SDRAM_D(6)"    LOC = P121;
+#NET "SDRAM_D(7)"    LOC = P120;
+#NET "SDRAM_D(8)"    LOC = P56;
+#NET "SDRAM_D(9)"    LOC = P57;
+#NET "SDRAM_D(10)"   LOC = P58;
+#NET "SDRAM_D(11)"   LOC = P59;
+#NET "SDRAM_D(12)"   LOC = P61;
+#NET "SDRAM_D(13)"   LOC = P62;
+#NET "SDRAM_D(14)"   LOC = P66;
+#NET "SDRAM_D(15)"   LOC = P67;
+#
+#NET "SDRAM_A(0)"    LOC = P138;
+#NET "SDRAM_A(1)"    LOC = P137;
+#NET "SDRAM_A(2)"    LOC = P140;
+#NET "SDRAM_A(3)"    LOC = P139;
+#NET "SDRAM_A(4)"    LOC = P40;
+#NET "SDRAM_A(5)"    LOC = P41;
+#NET "SDRAM_A(6)"    LOC = P43;
+#NET "SDRAM_A(7)"    LOC = P44;
+#NET "SDRAM_A(8)"    LOC = P45;
+#NET "SDRAM_A(9)"    LOC = P46;
+#NET "SDRAM_A(10)"   LOC = P133;
+#NET "SDRAM_A(11)"   LOC = P47;
+#NET "SDRAM_A(12)"   LOC = P48;
+#NET "SDRAM_BS0"     LOC = P131;
+#NET "SDRAM_BS1"     LOC = P134;
+#NET "SDRAM_LDQM"    LOC = P124;
+#NET "SDRAM_UDQM"    LOC = P55;
+#
+#NET "SDRAM_CKE"     LOC = P50;
+#NET "SDRAM_CLK"     LOC = P51;
+#NET "SDRAM_CS"      LOC = P132;
+#NET "SDRAM_RAS"     LOC = P126;
+#NET "SDRAM_CAS"     LOC = P127;
+#NET "SDRAM_WE"      LOC = P123;
