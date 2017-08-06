@@ -47,7 +47,8 @@
 
 
 
-vlogcomp -work work ..\..\implement\results\routed.v
+echo "Compiling Core VHDL UNISIM/Behavioral model"
+vhpcomp  -work work ..\..\implement\results\routed.vhd
 
 echo "Compiling Test Bench Files"
 
@@ -57,6 +58,7 @@ vhpcomp -work work    ..\bmg_stim_gen.vhd
 vhpcomp -work work    ..\bram_plane_synth.vhd 
 vhpcomp -work work    ..\bram_plane_tb.vhd
 
-    fuse -L simprims_ver work.bram_plane_tb work.glbl -o bram_plane_tb.exe
+
+    fuse -L simprim work.bram_plane_tb -o bram_plane_tb.exe
 
 .\bram_plane_tb.exe -sdftyp /bram_plane_tb/bram_plane_synth_inst/bmg_port=..\..\implement\results\routed.sdf -gui -tclbatch simcmds.tcl

@@ -45,6 +45,7 @@ architecture Behavioral of VGA_Generate is
 component VGA_BRAM
 port(   clka                        : in    std_logic;
         ena                         : in    std_logic;
+        wea                         : in    std_logic_vector(0 downto 0);
         addra                       : in    std_logic_vector(9 downto 0);
         dina                        : in    std_logic_vector(23 downto 0);
         
@@ -66,6 +67,10 @@ signal s_vga_hsync                  : std_logic := '1';
 signal s_vga_red                    : std_logic_vector(7 downto 0)  := X"00";
 signal s_vga_green                  : std_logic_vector(7 downto 0)  := X"00";
 signal s_vga_blue                   : std_logic_vector(7 downto 0)  := X"00";
+
+type t_data_vga                     is array (0 to 1023)  of std_logic_vector (23 downto 0);
+signal data_vga_1                   : t_data_vga    := (others => X"053F61");
+signal data_vga_2                   : t_data_vga    := (others => X"7F7F7F");
 -- ==================================================== --
 -- Vertical_sync
 -- ---------------------------------------------------- --
@@ -77,6 +82,8 @@ signal c_vga_vsync                  : integer   := 0;
 signal c_vga_hsync                  : integer   := 0;
 
 signal end_string                   : std_logic := '0';
+signal write_data                   : std_logic := '0';
+signal c_write_data                 : integer   := 0;
 -- ============================================================================ --
 --                                   Programm                                   --
 -- ============================================================================ --
@@ -87,6 +94,7 @@ begin
 VGA_BRAM_inst: VGA_BRAM
 port map(   clka                    => VGA_BRAM_clk,
             ena                     => VGA_BRAM_en,
+            wea                     => "0",
             addra                   => VGA_BRAM_addr,
             dina                    => VGA_BRAM_din,
             
@@ -205,21 +213,21 @@ begin
                         c_vga_hsync <= c_vga_hsync + 1;
                     end if;
                     
-                    -- if(v_state /= DATA) then                                     -- править
-                        -- s_vga_red   <= X"00";
-                        -- s_vga_green <= X"00";
-                        -- s_vga_blue  <= X"00";
-                    -- else
-                        -- if(write_data = '0') then
-                            -- s_vga_red   <= data_vga_1(c_vga_hsync)(23 downto 16);
-                            -- s_vga_green <= data_vga_1(c_vga_hsync)(15 downto 8);
-                            -- s_vga_blue  <= data_vga_1(c_vga_hsync)(7 downto 0);
-                        -- else
-                            -- s_vga_red   <= data_vga_2(c_vga_hsync)(23 downto 16);
-                            -- s_vga_green <= data_vga_2(c_vga_hsync)(15 downto 8);
-                            -- s_vga_blue  <= data_vga_2(c_vga_hsync)(7 downto 0);
-                        -- end if;
-                    -- end if;
+                    if(v_state /= DATA) then                                     -- править
+                        s_vga_red   <= X"00";
+                        s_vga_green <= X"00";
+                        s_vga_blue  <= X"00";
+                    else
+                        if(write_data = '0') then
+                            s_vga_red   <= data_vga_1(c_vga_hsync)(23 downto 16);
+                            s_vga_green <= data_vga_1(c_vga_hsync)(15 downto 8);
+                            s_vga_blue  <= data_vga_1(c_vga_hsync)(7 downto 0);
+                        else
+                            s_vga_red   <= data_vga_2(c_vga_hsync)(23 downto 16);
+                            s_vga_green <= data_vga_2(c_vga_hsync)(15 downto 8);
+                            s_vga_blue  <= data_vga_2(c_vga_hsync)(7 downto 0);
+                        end if;
+                    end if;
                 -- =================================================================== --
             ----------------------
             when DATA_DEL       =>

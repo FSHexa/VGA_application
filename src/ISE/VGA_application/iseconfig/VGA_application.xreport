@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2017-07-17T23:52:44</DateModified>
+  <DateModified>2017-08-06T21:16:34</DateModified>
   <ModuleName>VGA_application</ModuleName>
-  <SummaryTimeStamp>Unknown</SummaryTimeStamp>
+  <SummaryTimeStamp>2017-08-06T21:16:06</SummaryTimeStamp>
   <SavedFilePath>D:/git/VGA_application/src/ISE/VGA_application/iseconfig/VGA_application.xreport</SavedFilePath>
   <ImplementationReportsDirectory>D:/git/VGA_application/src/ISE/VGA_application\</ImplementationReportsDirectory>
-  <DateInitialized>2017-07-17T23:36:40</DateInitialized>
+  <DateInitialized>2017-08-06T21:16:34</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
  <body>

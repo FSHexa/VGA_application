@@ -47,9 +47,9 @@
 
 
 
-echo "Compiling Core Verilog UNISIM/Behavioral model"
-vlogcomp -work work ..\..\..\bram_plane.v 
-vhpcomp -work work ..\..\example_design\bram_plane_exdes.vhd
+echo "Compiling Core VHDL UNISIM/Behavioral model"
+vhpcomp  -work work ..\..\..\bram_plane.vhd 
+vhpcomp  -work work ..\..\example_design\bram_plane_exdes.vhd
 
 echo "Compiling Test Bench Files"
 
@@ -59,8 +59,7 @@ vhpcomp -work work    ..\bmg_stim_gen.vhd
 vhpcomp -work work    ..\bram_plane_synth.vhd 
 vhpcomp -work work    ..\bram_plane_tb.vhd
 
+fuse work.bram_plane_tb -L unisims -L xilinxcorelib -o bram_plane_tb.exe
 
-vlogcomp -work work $XILINX\verilog\src\glbl.v
-fuse work.bram_plane_tb work.glbl -L unisims_ver -L xilinxcorelib_ver -o bram_plane_tb.exe
 
 .\bram_plane_tb.exe -gui -tclbatch simcmds.tcl

@@ -48,8 +48,8 @@
 
 rm -rf simv* csrc DVEfiles AN.DB
 
-echo "Compiling Core Verilog UNISIM/Behavioral model"
-vlogan +v2k  ../../implement/results/routed.v
+echo "Compiling Core VHDL UNISIM/Behavioral model"
+vhdlan  ../../implement/results/routed.vhd
 
 echo "Compiling Test Bench Files"
 vhdlan    ../bmg_tb_pkg.vhd
@@ -60,7 +60,7 @@ vhdlan    ../bram_plane_tb.vhd
 
 
 echo "Elaborating Design"
-vcs +neg_tchk +vcs+lic+wait -debug bram_plane_tb glbl
+vcs +neg_tchk +vcs+lic+wait -debug bram_plane_tb
 
 echo "Simulating Design"
 ./simv -ucli -i ucli_commands.key

@@ -47,9 +47,9 @@
  vlib work 
 vmap work work
 
-echo "Compiling Core Verilog UNISIM/Behavioral model"
-vlog -work work ../../../bram_plane.v 
-vcom -work work ../../example_design/bram_plane_exdes.vhd
+echo "Compiling Core VHDL UNISIM/Behavioral model"
+vcom  -work work ../../../bram_plane.vhd \
+    ../../example_design/bram_plane_exdes.vhd
 
 echo "Compiling Test Bench Files"
 
@@ -59,9 +59,7 @@ vcom -work work    ../bmg_stim_gen.vhd
 vcom -work work    ../bram_plane_synth.vhd 
 vcom -work work    ../bram_plane_tb.vhd
 
-
-vlog -work work $env(XILINX)/verilog/src/glbl.v
-vsim  -novopt -t ps -L XilinxCoreLib_ver -L unisims_ver glbl work.bram_plane_tb
+vsim -novopt -t ps -L XilinxCoreLib -L unisim work.bram_plane_tb
 
 #Disabled waveform to save the disk space
 add log -r /*

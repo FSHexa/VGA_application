@@ -47,8 +47,8 @@
 #!/bin/sh
 rm -rf simv* csrc DVEfiles AN.DB
 
-echo "Compiling Core Verilog UNISIM/Behavioral model"
-vlogan +v2k  ../../../bram_plane.v
+echo "Compiling Core VHDL UNISIM/Behavioral model"
+vhdlan  ../../../bram_plane.vhd
 vhdlan  ../../example_design/bram_plane_exdes.vhd
 
 echo "Compiling Test Bench Files"
@@ -59,8 +59,7 @@ vhdlan    ../bram_plane_synth.vhd
 vhdlan    ../bram_plane_tb.vhd
 
 echo "Elaborating Design"
-vlogan +v2k $XILINX/verilog/src/glbl.v
-vcs +vcs+lic+wait -debug bram_plane_tb glbl
+vcs +vcs+lic+wait -debug bram_plane_tb
 
 echo "Simulating Design"
 ./simv -ucli -i ucli_commands.key

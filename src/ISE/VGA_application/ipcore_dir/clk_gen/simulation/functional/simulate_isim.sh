@@ -49,13 +49,12 @@
 
 # nt64
 # create the project
-vlogcomp -work work ${XILINX}/verilog/src/glbl.v
-vlogcomp -work work ../../../clk_gen.v
-vlogcomp -work work ../../example_design/clk_gen_exdes.v
-vlogcomp -work work ../clk_gen_tb.v
+vhpcomp -work work ../../../clk_gen.vhd
+vhpcomp -work work ../../example_design/clk_gen_exdes.vhd
+vhpcomp -work work ../clk_gen_tb.vhd
 
 # compile the project
-fuse work.clk_gen_tb work.glbl -L unisims_ver -o clk_gen_isim.exe
+fuse work.clk_gen_tb  -L unisim -o clk_gen_isim.exe
 
 # run the simulation script
 ./clk_gen_isim.exe -gui -tclbatch simcmds.tcl

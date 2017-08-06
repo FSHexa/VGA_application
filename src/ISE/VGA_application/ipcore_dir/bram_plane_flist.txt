@@ -4,8 +4,8 @@ bram_plane.asy
 bram_plane.gise
 bram_plane.ngc
 bram_plane.sym
-bram_plane.v
-bram_plane.veo
+bram_plane.vhd
+bram_plane.vho
 bram_plane.xco
 bram_plane.xise
 bram_plane\blk_mem_gen_v7_3_readme.txt

@@ -49,8 +49,8 @@ set work work
 vlib work
 vmap work work
 
-echo "Compiling Core Verilog UNISIM/Behavioral model"
-vlog -work work ../../implement/results/routed.v
+echo "Compiling Core VHDL UNISIM/Behavioral model"
+vcom  -work work ../../implement/results/routed.vhd
 
 echo "Compiling Test Bench Files"
 
@@ -60,7 +60,7 @@ vcom -work work    ../bmg_stim_gen.vhd
 vcom -work work    ../bram_plane_synth.vhd 
 vcom -work work    ../bram_plane_tb.vhd
 
-    vsim -novopt -t ps  -L simprims_ver +transport_int_delays -sdftyp /bram_plane_tb/bram_plane_synth_inst/bmg_port=../../implement/results/routed.sdf $work.bram_plane_tb $work.glbl -novopt
+    vsim -novopt -t ps -L simprim   +transport_int_delays -sdftyp /bram_plane_tb/bram_plane_synth_inst/bmg_port=../../implement/results/routed.sdf $work.bram_plane_tb -novopt
 
 #Disabled waveform to save the disk space
 add log -r /*
