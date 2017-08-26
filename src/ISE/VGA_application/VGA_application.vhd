@@ -75,9 +75,9 @@ begin
 -- ---------------------------------------------------------------------------- --
 VGA_VSYNC   <= s_vga_vsync;
 VGA_HSYNC   <= s_vga_hsync;
-VGA_RED     <= s_vga_red(4 downto 0);
-VGA_GREEN   <= s_vga_green(5 downto 0);
-VGA_BLUE    <= s_vga_blue(4 downto 0);
+VGA_RED     <= s_vga_red(7 downto 3);
+VGA_GREEN   <= s_vga_green(7 downto 2);
+VGA_BLUE    <= s_vga_blue(7 downto 3);
 
 VGA_Generate_inst: VGA_Generate
 port map(   CLK                     => clk_vga,

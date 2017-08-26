@@ -45,6 +45,7 @@
 :: PART OF THIS FILE AT ALL TIMES.
 ::--------------------------------------------------------------------------------
 
+cp ..\..\..\VGA_BRAM.mif .
 
 
 echo "Compiling Core VHDL UNISIM/Behavioral model"

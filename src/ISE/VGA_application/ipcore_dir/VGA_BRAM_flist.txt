@@ -1,6 +1,7 @@
 # Output products list for <VGA_BRAM>
 VGA_BRAM.asy
 VGA_BRAM.gise
+VGA_BRAM.mif
 VGA_BRAM.ngc
 VGA_BRAM.sym
 VGA_BRAM.vhd

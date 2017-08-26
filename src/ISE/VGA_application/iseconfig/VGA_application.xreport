@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2017-08-06T21:16:34</DateModified>
+  <DateModified>2017-08-26T23:48:15</DateModified>
   <ModuleName>VGA_application</ModuleName>
-  <SummaryTimeStamp>2017-08-06T21:16:06</SummaryTimeStamp>
+  <SummaryTimeStamp>2017-08-26T23:34:03</SummaryTimeStamp>
   <SavedFilePath>D:/git/VGA_application/src/ISE/VGA_application/iseconfig/VGA_application.xreport</SavedFilePath>
   <ImplementationReportsDirectory>D:/git/VGA_application/src/ISE/VGA_application\</ImplementationReportsDirectory>
   <DateInitialized>2017-08-06T21:16:34</DateInitialized>

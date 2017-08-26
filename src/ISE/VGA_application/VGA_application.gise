@@ -77,7 +77,6 @@
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
     <file xil_pn:fileType="FILE_LOG" xil_pn:name="fuse.log"/>
     <file xil_pn:fileType="FILE_VHO" xil_pn:name="ipcore_dir/bram_plane.vho" xil_pn:origination="imported"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_VHDL" xil_pn:name="ipcore_dir/clk_gen.vhd" xil_pn:origination="imported"/>
     <file xil_pn:fileType="FILE_VHO" xil_pn:name="ipcore_dir/clk_gen.vho" xil_pn:origination="imported"/>
     <file xil_pn:fileType="FILE_LOG" xil_pn:name="ipcore_dir/coregen.log"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
@@ -95,6 +94,75 @@
   </files>
 
   <transforms xmlns="http://www.xilinx.com/XMLSchema">
+    <transform xil_pn:end_ts="1503779846" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1503779846">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1503779846" xil_pn:in_ck="4531361599257275910" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1503779846">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="VGA_Generate.vhd"/>
+      <outfile xil_pn:name="VGA_application.vhd"/>
+      <outfile xil_pn:name="test_vga.vhd"/>
+    </transform>
+    <transform xil_pn:end_ts="1503779846" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="1195705567698276595" xil_pn:start_ts="1503779846">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1503779846" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-8992319767670183055" xil_pn:start_ts="1503779846">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1503779846" xil_pn:in_ck="-7711429486020613096" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="5912010893427208417" xil_pn:start_ts="1503779846">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="ipcore_dir/VGA_BRAM.ngc"/>
+      <outfile xil_pn:name="ipcore_dir/VGA_BRAM.vhd"/>
+      <outfile xil_pn:name="ipcore_dir/clk_gen.vhd"/>
+    </transform>
+    <transform xil_pn:end_ts="1503779846" xil_pn:in_ck="8028823635276515254" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1503779846">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="VGA_Generate.vhd"/>
+      <outfile xil_pn:name="VGA_application.vhd"/>
+      <outfile xil_pn:name="ipcore_dir/VGA_BRAM.vhd"/>
+      <outfile xil_pn:name="ipcore_dir/clk_gen.vhd"/>
+      <outfile xil_pn:name="test_vga.vhd"/>
+    </transform>
+    <transform xil_pn:end_ts="1503779905" xil_pn:in_ck="337576521767413798" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="2134856375560916601" xil_pn:start_ts="1503779875">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="TEST_VGA_application_beh.prj"/>
+      <outfile xil_pn:name="TEST_VGA_application_isim_beh.exe"/>
+      <outfile xil_pn:name="fuse.log"/>
+      <outfile xil_pn:name="isim"/>
+      <outfile xil_pn:name="isim.log"/>
+      <outfile xil_pn:name="xilinxsim.ini"/>
+    </transform>
+    <transform xil_pn:end_ts="1503779906" xil_pn:in_ck="-7214850305043316929" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="1300551339080878438" xil_pn:start_ts="1503779905">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="TEST_VGA_application_isim_beh.wdb"/>
+      <outfile xil_pn:name="isim.cmd"/>
+      <outfile xil_pn:name="isim.log"/>
+    </transform>
     <transform xil_pn:end_ts="1502042862" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1502042862">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
@@ -103,7 +171,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1502043396" xil_pn:in_ck="-7711429486020613096" xil_pn:name="TRAN_regenerateCores" xil_pn:prop_ck="5912010893427208417" xil_pn:start_ts="1502043395">
+    <transform xil_pn:end_ts="1503779064" xil_pn:in_ck="-7711429486020613096" xil_pn:name="TRAN_regenerateCores" xil_pn:prop_ck="5912010893427208417" xil_pn:start_ts="1503779063">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="ipcore_dir/VGA_BRAM.ngc"/>
@@ -126,7 +194,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1502043664" xil_pn:in_ck="7346820784888926841" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="7290536281934320122" xil_pn:start_ts="1502043654">
+    <transform xil_pn:end_ts="1503780710" xil_pn:in_ck="7346820784888926841" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="7290536281934320122" xil_pn:start_ts="1503780700">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
@@ -144,11 +212,11 @@
       <outfile xil_pn:name="webtalk_pn.xml"/>
       <outfile xil_pn:name="xst"/>
     </transform>
-    <transform xil_pn:end_ts="1502043403" xil_pn:in_ck="-1350097424227452588" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="239343839298117865" xil_pn:start_ts="1502043403">
+    <transform xil_pn:end_ts="1503779080" xil_pn:in_ck="-1350097424227452588" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="239343839298117865" xil_pn:start_ts="1503779079">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1502043672" xil_pn:in_ck="-4841623118969286665" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="-5008067770496655636" xil_pn:start_ts="1502043664">
+    <transform xil_pn:end_ts="1503780714" xil_pn:in_ck="-4841623118969286665" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="-5008067770496655636" xil_pn:start_ts="1503780710">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="VGA_application.bld"/>
@@ -157,10 +225,11 @@
       <outfile xil_pn:name="_ngo"/>
       <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1502043688" xil_pn:in_ck="8959650322317810398" xil_pn:name="TRANEXT_map_spartan6" xil_pn:prop_ck="1448924893915930207" xil_pn:start_ts="1502043672">
+    <transform xil_pn:end_ts="1503780722" xil_pn:in_ck="8959650322317810398" xil_pn:name="TRANEXT_map_spartan6" xil_pn:prop_ck="1448924893915930207" xil_pn:start_ts="1503780714">
       <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="VGA_application.pcf"/>
       <outfile xil_pn:name="VGA_application_map.map"/>
       <outfile xil_pn:name="VGA_application_map.mrp"/>
@@ -171,7 +240,7 @@
       <outfile xil_pn:name="VGA_application_usage.xml"/>
       <outfile xil_pn:name="_xmsgs/map.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1502043705" xil_pn:in_ck="3662508007255547639" xil_pn:name="TRANEXT_par_spartan6" xil_pn:prop_ck="93661965788626211" xil_pn:start_ts="1502043688">
+    <transform xil_pn:end_ts="1503780734" xil_pn:in_ck="3662508007255547639" xil_pn:name="TRANEXT_par_spartan6" xil_pn:prop_ck="93661965788626211" xil_pn:start_ts="1503780722">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="VGA_application.ncd"/>
@@ -185,8 +254,9 @@
       <outfile xil_pn:name="VGA_application_par.xrpt"/>
       <outfile xil_pn:name="_xmsgs/par.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1502043720" xil_pn:in_ck="4487787406744847700" xil_pn:name="TRANEXT_bitFile_spartan6" xil_pn:prop_ck="5341574683187206424" xil_pn:start_ts="1502043705">
+    <transform xil_pn:end_ts="1503780751" xil_pn:in_ck="4487787406744847700" xil_pn:name="TRANEXT_bitFile_spartan6" xil_pn:prop_ck="5341574683187206424" xil_pn:start_ts="1503780734">
       <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="VGA_application.ut"/>
       <outfile xil_pn:name="_xmsgs/bitgen.xmsgs"/>
@@ -197,7 +267,11 @@
       <outfile xil_pn:name="webtalk.log"/>
       <outfile xil_pn:name="webtalk_pn.xml"/>
     </transform>
-    <transform xil_pn:end_ts="1502043705" xil_pn:in_ck="8959464676380202586" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416184" xil_pn:start_ts="1502043699">
+    <transform xil_pn:end_ts="1503780780" xil_pn:in_ck="2598259108956905342" xil_pn:name="TRAN_configureTargetDevice" xil_pn:prop_ck="8482462020707587906" xil_pn:start_ts="1503780778">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1503780734" xil_pn:in_ck="8959464676380202586" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416184" xil_pn:start_ts="1503780729">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="VGA_application.twr"/>

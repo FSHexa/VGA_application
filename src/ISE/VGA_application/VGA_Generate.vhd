@@ -57,7 +57,7 @@ end component;
 -- ============================================================================ --
 --                                    Signal                                    --
 -- ============================================================================ --
-signal str_bram_clk                 : std_logic := '0';
+signal not_vga_bram_clk             : std_logic := '0';
 signal str_bram_en                  : std_logic := '0';
 signal str_bram_addr                : std_logic_vector(9 downto 0)  := (others => '0');
 signal str_bram_dout                : std_logic_vector(23 downto 0) := (others => '0');
@@ -78,8 +78,8 @@ type t_state                        is (SYNC, SYNC_DEL, DATA, DATA_DEL);
 signal v_state                      : t_state   := SYNC;
 signal h_state                      : t_state   := SYNC;
 
-signal c_vga_vsync                  : integer   := 0;
-signal c_vga_hsync                  : integer   := 0;
+signal c_vga_vsync                  : integer range 0 to 1000 := 0;
+signal c_vga_hsync                  : integer range 0 to 1500 := 0;
 
 signal end_string                   : std_logic := '0';
 signal write_data                   : std_logic := '0';
@@ -98,7 +98,7 @@ port map(   clka                    => VGA_BRAM_clk,
             addra                   => VGA_BRAM_addr,
             dina                    => VGA_BRAM_din,
             
-            clkb                    => str_bram_clk,
+            clkb                    => not_vga_bram_clk,
             enb                     => str_bram_en,
             addrb                   => str_bram_addr,
             doutb                   => str_bram_dout);
@@ -111,12 +111,13 @@ VGA_RED     <= s_vga_red;
 VGA_GREEN   <= s_vga_green;
 VGA_BLUE    <= s_vga_blue;
 
+not_vga_bram_clk    <= not(CLK);
 -- ==================================================== --
 -- Process info                                         --
 -- ==================================================== --
-process(VGA_BRAM_clk)
+process(CLK)
 begin
-    if(rising_edge(VGA_BRAM_clk)) then
+    if(rising_edge(CLK)) then
         if(end_string = '1') then
             case v_state is
                 ----------------------
@@ -177,7 +178,7 @@ begin
                     s_vga_green <= X"00";
                     s_vga_blue  <= X"00";
                     
-                    if(c_vga_hsync = 136) then
+                    if(c_vga_hsync = 135) then
                         c_vga_hsync <= 0;
                         h_state     <= SYNC_DEL;
                         s_vga_hsync <= '1';
@@ -193,10 +194,12 @@ begin
                     s_vga_green <= X"00";
                     s_vga_blue  <= X"00";
                     
-                    if(c_vga_hsync = 162) then
-                        c_vga_hsync <= 0;
-                        h_state     <= DATA;
-                        s_vga_hsync <= '1';
+                    if(c_vga_hsync = 159) then
+                        c_vga_hsync     <= 0;
+                        h_state         <= DATA;
+                        s_vga_hsync     <= '1';
+                        str_bram_en     <= '1';
+                        str_bram_addr   <= (others => '0');
                     else
                         c_vga_hsync <= c_vga_hsync + 1;
                     end if;
@@ -211,22 +214,26 @@ begin
                         s_vga_hsync <= '1';
                     else
                         c_vga_hsync <= c_vga_hsync + 1;
+                        str_bram_addr   <= str_bram_addr + 1;
                     end if;
                     
-                    if(v_state /= DATA) then                                     -- править
+                    if(v_state /= DATA) then
                         s_vga_red   <= X"00";
                         s_vga_green <= X"00";
                         s_vga_blue  <= X"00";
                     else
-                        if(write_data = '0') then
-                            s_vga_red   <= data_vga_1(c_vga_hsync)(23 downto 16);
-                            s_vga_green <= data_vga_1(c_vga_hsync)(15 downto 8);
-                            s_vga_blue  <= data_vga_1(c_vga_hsync)(7 downto 0);
-                        else
-                            s_vga_red   <= data_vga_2(c_vga_hsync)(23 downto 16);
-                            s_vga_green <= data_vga_2(c_vga_hsync)(15 downto 8);
-                            s_vga_blue  <= data_vga_2(c_vga_hsync)(7 downto 0);
-                        end if;
+                        s_vga_red   <= str_bram_dout(23 downto 16);
+                        s_vga_green <= str_bram_dout(15 downto 8);
+                        s_vga_blue  <= str_bram_dout(7 downto 0);
+                        -- if(write_data = '0') then
+                            -- s_vga_red   <= data_vga_1(c_vga_hsync)(23 downto 16);
+                            -- s_vga_green <= data_vga_1(c_vga_hsync)(15 downto 8);
+                            -- s_vga_blue  <= data_vga_1(c_vga_hsync)(7 downto 0);
+                        -- else
+                            -- s_vga_red   <= data_vga_2(c_vga_hsync)(23 downto 16);
+                            -- s_vga_green <= data_vga_2(c_vga_hsync)(15 downto 8);
+                            -- s_vga_blue  <= data_vga_2(c_vga_hsync)(7 downto 0);
+                        -- end if;
                     end if;
                 -- =================================================================== --
             ----------------------
@@ -237,20 +244,20 @@ begin
                     s_vga_green <= X"00";
                     s_vga_blue  <= X"00";
                     
-                    if(c_vga_hsync = 25) then
+                    if(c_vga_hsync = 23) then
                         c_vga_hsync <= 0;
                         end_string  <= '0';
                         h_state     <= SYNC;
                         s_vga_hsync <= '0';
-                        if(c_write_data = 7) then
-                            write_data  <= not(write_data);                     -- править
-                            c_write_data<= 0;
-                        else
-                            c_write_data    <= c_write_data + 1;
-                        end if;
+                        -- if(c_write_data = 7) then
+                            -- write_data  <= not(write_data);                     -- править
+                            -- c_write_data<= 0;
+                        -- else
+                            -- c_write_data    <= c_write_data + 1;
+                        -- end if;
                     else
                         c_vga_hsync <= c_vga_hsync + 1;
-                        if(c_vga_hsync = 24) then
+                        if(c_vga_hsync = 22) then
                             end_string  <= '1';
                         end if;
                     end if;

@@ -5,76 +5,61 @@
    <db_ref_list>
       <db_ref path="D:/git/VGA_application/src/ISE/VGA_application/TEST_VGA_application_isim_beh.wdb" id="1" type="auto">
          <top_modules>
-            <top_module name="glbl" />
             <top_module name="numeric_std" />
             <top_module name="std_logic_1164" />
             <top_module name="std_logic_arith" />
+            <top_module name="std_logic_textio" />
             <top_module name="std_logic_unsigned" />
             <top_module name="test_vga_application" />
             <top_module name="textio" />
             <top_module name="vcomponents" />
-            <top_module name="vl_types" />
+            <top_module name="vital_primitives" />
+            <top_module name="vital_timing" />
+            <top_module name="vpkg" />
          </top_modules>
       </db_ref>
    </db_ref_list>
-   <WVObjectSize size="11" />
+   <WVObjectSize size="10" />
+   <wvobject fp_name="/test_vga_application/clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
    <wvobject fp_name="/test_vga_application/VGA_application_inst/clk" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
-      <obj_property name="CustomSignalColor">#008000</obj_property>
    </wvobject>
    <wvobject fp_name="/test_vga_application/VGA_application_inst/vga_vsync" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">vga_vsync</obj_property>
       <obj_property name="ObjectShortName">vga_vsync</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
-      <obj_property name="CustomSignalColor">#008000</obj_property>
    </wvobject>
    <wvobject fp_name="/test_vga_application/VGA_application_inst/vga_hsync" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">vga_hsync</obj_property>
       <obj_property name="ObjectShortName">vga_hsync</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
-      <obj_property name="CustomSignalColor">#008000</obj_property>
    </wvobject>
    <wvobject fp_name="/test_vga_application/VGA_application_inst/vga_red" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">vga_red[4:0]</obj_property>
       <obj_property name="ObjectShortName">vga_red[4:0]</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
-      <obj_property name="CustomSignalColor">#008000</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/test_vga_application/VGA_application_inst/vga_green" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">vga_green[5:0]</obj_property>
       <obj_property name="ObjectShortName">vga_green[5:0]</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
-      <obj_property name="CustomSignalColor">#008000</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/test_vga_application/VGA_application_inst/vga_blue" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">vga_blue[4:0]</obj_property>
       <obj_property name="ObjectShortName">vga_blue[4:0]</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
-      <obj_property name="CustomSignalColor">#008000</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/test_vga_application/VGA_application_inst/clk_vga" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">clk_vga</obj_property>
-      <obj_property name="ObjectShortName">clk_vga</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test_vga_application/VGA_application_inst/v_state" type="other" db_ref_id="1">
+   <wvobject fp_name="/test_vga_application/VGA_application_inst/VGA_Generate_inst/v_state" type="other" db_ref_id="1">
+      <obj_property name="DisplayName">label</obj_property>
       <obj_property name="ElementShortName">v_state</obj_property>
       <obj_property name="ObjectShortName">v_state</obj_property>
+      <obj_property name="label">v_state</obj_property>
    </wvobject>
-   <wvobject fp_name="/test_vga_application/VGA_application_inst/c_vga_vsync" type="other" db_ref_id="1">
-      <obj_property name="ElementShortName">c_vga_vsync</obj_property>
-      <obj_property name="ObjectShortName">c_vga_vsync</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test_vga_application/VGA_application_inst/h_state" type="other" db_ref_id="1">
+   <wvobject fp_name="/test_vga_application/VGA_application_inst/VGA_Generate_inst/h_state" type="other" db_ref_id="1">
       <obj_property name="ElementShortName">h_state</obj_property>
       <obj_property name="ObjectShortName">h_state</obj_property>
    </wvobject>
-   <wvobject fp_name="/test_vga_application/VGA_application_inst/c_vga_hsync" type="other" db_ref_id="1">
-      <obj_property name="ElementShortName">c_vga_hsync</obj_property>
-      <obj_property name="ObjectShortName">c_vga_hsync</obj_property>
+   <wvobject fp_name="/test_vga_application/VGA_application_inst/VGA_Generate_inst/end_string" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">end_string</obj_property>
+      <obj_property name="ObjectShortName">end_string</obj_property>
    </wvobject>
 </wave_config>
