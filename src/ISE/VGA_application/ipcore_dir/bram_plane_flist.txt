@@ -2,6 +2,7 @@
 _xmsgs\pn_parser.xmsgs
 bram_plane.asy
 bram_plane.gise
+bram_plane.mif
 bram_plane.ngc
 bram_plane.sym
 bram_plane.vhd

@@ -88,9 +88,9 @@ USE UNISIM.VCOMPONENTS.ALL;
 ENTITY bram_plane_exdes IS
   PORT (
       --Inputs - Port A
-    ADDRA          : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
+    ADDRA          : IN STD_LOGIC_VECTOR(6 DOWNTO 0);
   
-    DOUTA          : OUT STD_LOGIC_VECTOR(23 DOWNTO 0);
+    DOUTA          : OUT STD_LOGIC_VECTOR(63 DOWNTO 0);
     CLKA       : IN STD_LOGIC
 
 
@@ -111,9 +111,9 @@ ARCHITECTURE xilinx OF bram_plane_exdes IS
   COMPONENT bram_plane IS
   PORT (
       --Port A
-    ADDRA      : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
+    ADDRA      : IN STD_LOGIC_VECTOR(6 DOWNTO 0);
   
-    DOUTA      : OUT STD_LOGIC_VECTOR(23 DOWNTO 0);
+    DOUTA      : OUT STD_LOGIC_VECTOR(63 DOWNTO 0);
 
     CLKA       : IN STD_LOGIC
 

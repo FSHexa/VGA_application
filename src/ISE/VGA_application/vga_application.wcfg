@@ -19,11 +19,7 @@
          </top_modules>
       </db_ref>
    </db_ref_list>
-   <WVObjectSize size="10" />
-   <wvobject fp_name="/test_vga_application/clk" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">clk</obj_property>
-      <obj_property name="ObjectShortName">clk</obj_property>
-   </wvobject>
+   <WVObjectSize size="25" />
    <wvobject fp_name="/test_vga_application/VGA_application_inst/clk" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -39,27 +35,104 @@
    <wvobject fp_name="/test_vga_application/VGA_application_inst/vga_red" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">vga_red[4:0]</obj_property>
       <obj_property name="ObjectShortName">vga_red[4:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/test_vga_application/VGA_application_inst/vga_green" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">vga_green[5:0]</obj_property>
       <obj_property name="ObjectShortName">vga_green[5:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/test_vga_application/VGA_application_inst/vga_blue" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">vga_blue[4:0]</obj_property>
       <obj_property name="ObjectShortName">vga_blue[4:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/test_vga_application/VGA_application_inst/VGA_Generate_inst/v_state" type="other" db_ref_id="1">
-      <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="ElementShortName">v_state</obj_property>
-      <obj_property name="ObjectShortName">v_state</obj_property>
-      <obj_property name="label">v_state</obj_property>
+   <wvobject fp_name="/test_vga_application/VGA_application_inst/clk_vga" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk_vga</obj_property>
+      <obj_property name="ObjectShortName">clk_vga</obj_property>
    </wvobject>
-   <wvobject fp_name="/test_vga_application/VGA_application_inst/VGA_Generate_inst/h_state" type="other" db_ref_id="1">
-      <obj_property name="ElementShortName">h_state</obj_property>
-      <obj_property name="ObjectShortName">h_state</obj_property>
+   <wvobject fp_name="/test_vga_application/VGA_application_inst/busy_memory" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">busy_memory</obj_property>
+      <obj_property name="ObjectShortName">busy_memory</obj_property>
    </wvobject>
-   <wvobject fp_name="/test_vga_application/VGA_application_inst/VGA_Generate_inst/end_string" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">end_string</obj_property>
-      <obj_property name="ObjectShortName">end_string</obj_property>
+   <wvobject fp_name="/test_vga_application/VGA_application_inst/end_frame" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">end_frame</obj_property>
+      <obj_property name="ObjectShortName">end_frame</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_vga_application/VGA_application_inst/coord_x" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">coord_x</obj_property>
+      <obj_property name="ObjectShortName">coord_x</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_vga_application/VGA_application_inst/coord_y" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">coord_y</obj_property>
+      <obj_property name="ObjectShortName">coord_y</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_vga_application/VGA_application_inst/coord_plane_x" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">coord_plane_x</obj_property>
+      <obj_property name="ObjectShortName">coord_plane_x</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_vga_application/VGA_application_inst/coord_plane_y" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">coord_plane_y</obj_property>
+      <obj_property name="ObjectShortName">coord_plane_y</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_vga_application/VGA_application_inst/string_plane" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">string_plane[0:1023]</obj_property>
+      <obj_property name="ObjectShortName">string_plane[0:1023]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_vga_application/VGA_application_inst/state_plane" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">state_plane</obj_property>
+      <obj_property name="ObjectShortName">state_plane</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_vga_application/VGA_application_inst/plane_en" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">plane_en</obj_property>
+      <obj_property name="ObjectShortName">plane_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_vga_application/VGA_application_inst/plane_addr" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">plane_addr[6:0]</obj_property>
+      <obj_property name="ObjectShortName">plane_addr[6:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_vga_application/VGA_application_inst/plane_dout" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">plane_dout[63:0]</obj_property>
+      <obj_property name="ObjectShortName">plane_dout[63:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_vga_application/VGA_application_inst/not_clk_vga" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">not_clk_vga</obj_property>
+      <obj_property name="ObjectShortName">not_clk_vga</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_vga_application/VGA_application_inst/vga_bram_en" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">vga_bram_en</obj_property>
+      <obj_property name="ObjectShortName">vga_bram_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_vga_application/VGA_application_inst/vga_bram_we" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">vga_bram_we[0:0]</obj_property>
+      <obj_property name="ObjectShortName">vga_bram_we[0:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_vga_application/VGA_application_inst/vga_bram_addr" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">vga_bram_addr[10:0]</obj_property>
+      <obj_property name="ObjectShortName">vga_bram_addr[10:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_vga_application/VGA_application_inst/s_vga_bram_addr" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">s_vga_bram_addr[9:0]</obj_property>
+      <obj_property name="ObjectShortName">s_vga_bram_addr[9:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_vga_application/VGA_application_inst/f_vga_bram_addr" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">f_vga_bram_addr</obj_property>
+      <obj_property name="ObjectShortName">f_vga_bram_addr</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_vga_application/VGA_application_inst/vga_bram_din" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">vga_bram_din[23:0]</obj_property>
+      <obj_property name="ObjectShortName">vga_bram_din[23:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
 </wave_config>
